@@ -20,6 +20,10 @@ body{
 
 }
 
+h1{
+    text-decoration: underline;
+}
+
 button{
     background-color: #00AEEF;
     color: white;
