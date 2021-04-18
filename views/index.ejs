@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <h1>Random Project Name Generator</h1>
+    <p>Looking for a secret project name?</p>
+    <p>Look no further. Click on generate after entering the number of names you want to generate.</p>
+    <form action="generate">
+        <input type="number" name="count" id="count">
+        <button type="submit" onclick="generate(count)">Generate</button>
+    </form>
+    <% if(status === "OK") {%>       
+        <ul class="styled-list">
+            <% for(var i=0; i<projectNames.length; i++) {%>
+            <li><%= projectNames[i] %></li>
+            <% } %>
+        </ul>
+    <% } else { %>
+        <p> ERROR!!! 
+            <%= text %>
+        </p>
+    <% } %>
+    
+    
+</body>
+</html>
