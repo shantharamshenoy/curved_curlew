@@ -13,7 +13,9 @@ function generateName(count) {
         let adj = config.adjectives[Math.floor(Math.random() * config.adjectives.length)];
         let animalName = config.animalNames[Math.floor(Math.random() * config.animalNames.length)];
         let birdName = config.birdNames[Math.floor(Math.random() * config.birdNames.length)];
-        var randomName = adj + " " + animalName;
+        let name = [animalName, birdName];
+
+        var randomName = adj + " " + name[Math.floor(Math.random() * 2)];
         nameList.push(titleCase(randomName));
     }
     return nameList;
@@ -43,7 +45,7 @@ app.set('view engine', 'ejs');
 
 app.get('', (req, res) => {
     var as = generateName(1);
-    res.render('index', { text: as});
+    res.render('index', { projectNames: as, status: "OK"});
 });
 
 app.get('/generate', (req, res) => {
